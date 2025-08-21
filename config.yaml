@@ -1,0 +1,27 @@
+# Configuration for ML Pipeline
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  test_size: 0.2
+  random_state: 42
+
+model:
+  algorithm: "RandomForest"
+  parameters:
+    n_estimators: 100
+    max_depth: 10
+    random_state: 42
+
+training:
+  cv_folds: 5
+  scoring: "accuracy"
+
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1"]
+  classification_report: true
+  confusion_matrix: true
+
+output:
+  model_path: "models/"
+  results_path: "results/"
+  plots_path: "plots/"
